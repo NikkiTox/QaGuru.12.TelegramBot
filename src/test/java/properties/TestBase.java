@@ -15,8 +15,9 @@ public class TestBase {
         capabilities.setCapability("enableVNC", true);
         capabilities.setCapability("enableVideo", true);
         Configuration.browserCapabilities = capabilities;
-        String user = "user1";
-        String password = "1234";
+        Configuration.browser = System.getProperty("browser", "chrome");
+        String user = System.getProperty("user1");
+        String password = System.getProperty("1234");
         Configuration.remote = "https://" + user + ":" + password + "@selenoid.autotests.cloud/wd/hub";
     }
 
